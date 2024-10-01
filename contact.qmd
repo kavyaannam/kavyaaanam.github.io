@@ -2,6 +2,7 @@
 title: "Get in touch with me"
 format:
   html:
+    output_dir: docs
     css: styles.css  # Links to your custom CSS file for styling
 ---
 

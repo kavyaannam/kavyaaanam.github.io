@@ -1,0 +1,14 @@
+---
+title: "Welcome to my portfolio"
+format:
+  html:
+    output_dir: docs
+    toc: false  # Table of contents is disabled for a clean homepage
+    
+---
+
+# ![](my_profile_picture.jpg){width="300"}
+
+This is my personal website where I showcase my professional experience, skills, and projects.
+
+

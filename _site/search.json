@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my portfolio",
+    "section": "",
+    "text": "This is my personal website where I showcase my professional experience, skills, and projects."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a Systems Engineer and Senior Software Engineer with 5 years of experience in the IT industry. I have led data engineering efforts for Aviva Health UK, designing scalable data pipelines and implementing comprehensive ETL processes. My expertise includes managing databases like Oracle, Hive, and Snowflake, and enhancing reporting capabilities with Qlik Sense.To further enhance my skills, I am currently pursuing a Master’s in Data Analytics at George Mason University. When I’m not working, I enjoy hiking and photography, which help me stay creative and inspired.\n\n\n\n\nLanguages: SQL, Python, R\nData Engineering:\n\nETL processes, data pipeline design\n\nDatabases:\n\nOracle, Hive, Snowflake\n\nBig Data Technologies:\n\nApache Spark, Apache Kafka, Databricks\n\nReporting Tools:\n\nPower BI, Tableau, Qlik Sense\n\n\n\n\n\n\n\n\nDesigned ETL data load strategies and translated complex business requirements into effective data models.\nImplemented documentation standards and best practices for ETL mappings.\n\n\n\n\n\nLed data engineering efforts for Aviva Health UK, designing scalable data pipelines and implementing ETL processes.\nManaged and optimized databases to ensure data quality and performance.\n\n\n\n\n\n\nProject 1: (Description coming soon)\nProject 2: (Description coming soon)\n\n\n\n\nYou can reach me at annamkavya@gmail.com or connect with me on LinkedIn.\n\nThank you for visiting my page!"
+  },
+  {
+    "objectID": "about.html#about-me",
+    "href": "about.html#about-me",
+    "title": "About Me",
+    "section": "",
+    "text": "I am a Systems Engineer and Senior Software Engineer with 5 years of experience in the IT industry. I have led data engineering efforts for Aviva Health UK, designing scalable data pipelines and implementing comprehensive ETL processes. My expertise includes managing databases like Oracle, Hive, and Snowflake, and enhancing reporting capabilities with Qlik Sense.To further enhance my skills, I am currently pursuing a Master’s in Data Analytics at George Mason University. When I’m not working, I enjoy hiking and photography, which help me stay creative and inspired."
+  },
+  {
+    "objectID": "about.html#my-skill-set",
+    "href": "about.html#my-skill-set",
+    "title": "About Me",
+    "section": "",
+    "text": "Languages: SQL, Python, R\nData Engineering:\n\nETL processes, data pipeline design\n\nDatabases:\n\nOracle, Hive, Snowflake\n\nBig Data Technologies:\n\nApache Spark, Apache Kafka, Databricks\n\nReporting Tools:\n\nPower BI, Tableau, Qlik Sense"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "",
+    "text": "Designed ETL data load strategies and translated complex business requirements into effective data models.\nImplemented documentation standards and best practices for ETL mappings.\n\n\n\n\n\nLed data engineering efforts for Aviva Health UK, designing scalable data pipelines and implementing ETL processes.\nManaged and optimized databases to ensure data quality and performance."
+  },
+  {
+    "objectID": "about.html#projects",
+    "href": "about.html#projects",
+    "title": "About Me",
+    "section": "",
+    "text": "Project 1: (Description coming soon)\nProject 2: (Description coming soon)"
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About Me",
+    "section": "",
+    "text": "You can reach me at annamkavya@gmail.com or connect with me on LinkedIn.\n\nThank you for visiting my page!"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Get in touch with me",
+    "section": "",
+    "text": "Thank you for visiting my portfolio! If you have any questions, feel free to reach out through the form below."
+  },
+  {
+    "objectID": "contact.html#contact-form",
+    "href": "contact.html#contact-form",
+    "title": "Get in touch with me",
+    "section": "Contact Form",
+    "text": "Contact Form\n\nName: \nEmail: \nMessage:"
+  },
+  {
+    "objectID": "contact.html#connect-with-me",
+    "href": "contact.html#connect-with-me",
+    "title": "Get in touch with me",
+    "section": "Connect with Me",
+    "text": "Connect with Me\n\nEmail: annamkavya@gmail.com\nLinkedIn: Connect with me"
+  },
+  {
+    "objectID": "contact.html#follow-me",
+    "href": "contact.html#follow-me",
+    "title": "Get in touch with me",
+    "section": "Follow Me",
+    "text": "Follow Me\n\nGitHub: Your GitHub Profile"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Here are some of the projects I’ve worked on:"
+  }
+]

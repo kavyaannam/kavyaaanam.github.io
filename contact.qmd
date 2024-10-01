@@ -1,0 +1,36 @@
+---
+title: "Get in touch with me"
+format:
+  html:
+    output_dir: docs
+    
+---
+
+
+
+Thank you for visiting my portfolio! If you have any questions, feel free to reach out through the form below.
+
+## Contact Form
+
+<form action="https://formspree.io/f/{your_form_id}" method="POST">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" required><br>
+  
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+  
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message" rows="4" required></textarea><br>
+  
+  <input type="submit" value="Send">
+</form>
+
+## Connect with Me
+
+- **Email**: [annamkavya@gmail.com](mailto:annamkavya@gmail.com)
+- **LinkedIn**: [Connect with me](https://www.linkedin.com/in/annam-kavya-460710104/?originalSubdomain=in)
+
+## Follow Me
+
+- **GitHub**: [Your GitHub Profile](https://github.com/kavyaannam)
+

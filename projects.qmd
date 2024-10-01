@@ -3,7 +3,7 @@ title: "Projects"
 format:
   html:
     toc: false  # Disable table of contents for this page
-    css: assets/css/styles.css  # Link to your custom CSS file
+    
 ---
 
 # My Projects

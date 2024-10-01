@@ -1,0 +1,13 @@
+---
+title: "Welcome to my portfolio"
+format:
+  html:
+    toc: false  # Table of contents is disabled for a clean homepage
+    css: css/styles.css  # Links to your custom CSS file for styling
+---
+
+# ![](my_profile_picture.jpg){width="300"}
+
+This is my personal website where I showcase my professional experience, skills, and projects.
+
+

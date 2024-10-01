@@ -2,6 +2,7 @@
 title: "Projects"
 format:
   html:
+    output_dir: docs
     toc: false  # Disable table of contents for this page
     
 ---

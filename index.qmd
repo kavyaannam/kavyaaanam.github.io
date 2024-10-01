@@ -2,8 +2,9 @@
 title: "Welcome to my portfolio"
 format:
   html:
+    output_dir: docs
     toc: false  # Table of contents is disabled for a clean homepage
-    css: css/styles.css  # Links to your custom CSS file for styling
+    css: css/styles.css  
 ---
 
 # ![](my_profile_picture.jpg){width="300"}

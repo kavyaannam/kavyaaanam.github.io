@@ -2,6 +2,7 @@
 title: "About Me"
 description: "Learn more about my background, skills, and experiences."
 format: html
+output_dir: docs
 ---
 
 # Hi, I'm Annam Kavya 👋

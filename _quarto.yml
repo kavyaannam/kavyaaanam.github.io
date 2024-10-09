@@ -3,8 +3,8 @@ project:
   output-dir: docs
 
 website:
-  title: "ANNAM KAVYA"
-  description: "Data ENGINEER | Developer | Researcher"
+  title: "MID PROJECT"
+  description: "A Seven-Decade Analysis of Trends and Influences"
   navbar:
     right:
       - href: index.qmd
@@ -13,12 +13,17 @@ website:
         text: "About"
       - href: projects.qmd
         text: "Projects"
+      - href: Code.qmd
+        text: "Source Code"
+      - href: References.qmd
+        text: "References"
       - href: contact.qmd
         text: "Contact"
 
+
 format:
   html:
-    theme: cerulean
+    theme: darkly
     toc: true
 
 

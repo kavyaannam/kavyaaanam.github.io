@@ -1,0 +1,360 @@
+---
+title: "Code"
+description: ""
+format:
+  html:
+    execute:
+      warning:false
+    output_dir: docs
+---
+
+**Re Visualization 1 : Boxplot of Lung Cancer Deaths per 100,000 by Sex Across Smoking Regulation Periods (1950-2021)**
+
+```{r}
+knitr::opts_chunk$set(
+  warning = FALSE,
+  message = FALSE
+)
+
+```
+
+```{r}
+suppressWarnings({
+  library(ggplot2)
+  library(dplyr)
+  library(tidyr)
+  
+})
+
+suppressPackageStartupMessages({
+  library(ggplot2)
+  library(dplyr)
+  library(tidyr)
+})
+```
+
+```{r}
+# Loading necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+
+```{r, fig.width=15, fig.height=7}
+# Step 1: Loading the dataset 
+data <- read.csv("C:/Users/annam/Desktop/SEM_1/STAT_515/R_WORKSHEETS/Mid_project/lung-cancer-data.csv")
+
+# Step 2: Reshaping the data from wide to long format for easier visualization
+data_long <- data %>%
+  pivot_longer(cols = c("Female_Deaths", "Male_Deaths"), 
+               names_to = "Sex", 
+               values_to = "Deaths_per_100k") %>%
+  mutate(Sex = ifelse(Sex == "Female_Deaths", "Female", "Male"))
+
+# Step 3: Creating a new column to classify data into pre-, post-, and strict regulations periods
+data_long <- data_long %>%
+  mutate(Regulation_Period = case_when(
+    Year >= 1950 & Year < 1975 ~ "1950-1975: Pre-smoking regulation",
+    Year >= 1975 & Year <= 2000 ~ "1975-2000: Post-smoking regulation",
+    Year >= 2000 & Year <= 2021 ~ "2000-2021: Strict regulations worldwide"
+  )) %>%
+  filter(!is.na(Regulation_Period))  # Remove rows with NA in Regulation_Period
+
+# Step 4: Adding statistical summaries (medians)
+# Calculating medians for annotations
+median_values <- data_long %>%
+  group_by(Regulation_Period, Sex) %>%
+  summarise(Median_Deaths = median(Deaths_per_100k))
+
+# Step 5: Plot the combined data with box plots for all three periods (with improved visibility)
+ggplot(data_long, aes(x = Regulation_Period, y = Deaths_per_100k, fill = Sex)) +
+  geom_boxplot(outlier.shape = NA, alpha = 0.7) +  # Boxplot without outliers
+  stat_summary(fun = median, geom = "point", shape = 20, size = 3, color = "black", position = position_dodge(0.75)) +  # Add median points in black
+  geom_text(data = median_values, aes(label = round(Median_Deaths, 1), y = Median_Deaths + 5),  # Annotate medians, adjust position
+            position = position_dodge(0.75), size = 4, color = "black", vjust = -0.5) +  # Use black color for better contrast
+  scale_fill_brewer(palette = "Set1") +  # Use a color palette for professional aesthetics
+  labs(title = "Lung Cancer Deaths per 100,000: Pre, Post, and Strict Smoking Regulations",
+       subtitle = "Comparison between Male and Female Death Rates Across Three Regulatory Periods",
+       x = "Regulation Period", 
+       y = "Deaths per 100,000", 
+       fill = "Sex") +
+  ylim(0, 50) +  # Adjust y-axis limits to provide more room for annotations
+  theme_minimal() +  # Clean, minimal theme
+  theme(plot.title = element_text(size = 16, face = "bold"),
+        plot.subtitle = element_text(size = 12),
+        axis.text.x = element_text(size = 12),
+        axis.text.y = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        legend.title = element_text(size = 12),
+        legend.text = element_text(size = 12),
+        panel.grid.major = element_line(size = 0.5, linetype = 'solid', color = 'grey80'),
+        panel.grid.minor = element_blank())  # Remove minor grid lines for a cleaner look
+
+```
+
+***Re Visualization 2 Faceted Line Plot: Gender-Specific Lung Cancer Mortality Trends***
+
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(readr)
+
+# Loading the lung cancer data
+lung_cancer_data <- read_csv("C:/Users/annam/Desktop/SEM_1/STAT_515/R_WORKSHEETS/Mid_project/lung-cancer-data.csv")
+
+# Reshaping the data into a longer format to make it easier for plotting
+lung_cancer_data_long <- lung_cancer_data %>%
+  pivot_longer(cols = c(Female_Deaths, Male_Deaths), 
+               names_to = "Sex", 
+               values_to = "Deaths") %>%
+  mutate(Sex = recode(Sex, "Female_Deaths" = "Female", "Male_Deaths" = "Male"))
+
+# Creating the enhanced facet grid plot
+ggplot(lung_cancer_data_long, aes(x = Year, y = Deaths, color = Sex)) +
+  geom_line(size = 1.2) +  # Thicker lines for better visibility
+  geom_point(size = 2, alpha = 0.7) +  # Add points for emphasis
+  geom_smooth(method = "loess", span = 0.3, se = TRUE, linetype = "dotted", color = "black") +  # Smoothed trend line
+  facet_grid(Sex ~ ., scales = "free_y") +  # Facet by Sex, free y-scales
+  # Customizing the x-axis and y-axis
+  scale_y_continuous("Deaths per 100,000", limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  scale_x_continuous("Year", breaks = seq(min(lung_cancer_data_long$Year), max(lung_cancer_data_long$Year), by = 5)) +
+  # Custom colors for Male and Female
+  scale_color_manual(values = c("Male" = "#1f77b4", "Female" = "#ff7f0e")) +
+  # Titles and Labels
+  labs(title = "Lung Cancer Deaths per 100,000 by Sex (1950-2002)",
+       subtitle = "A Detailed Comparison of Male and Female Mortality Trends Over Time",
+       x = "Year", y = "Deaths per 100,000",
+       caption = "Data Source: Your Lung Cancer Dataset") +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "none",  
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 16),  # Bold and centered title
+    plot.subtitle = element_text(hjust = 0.5, size = 12),  # Centered subtitle
+    strip.text = element_text(size = 12, face = "bold"),  # Facet label styling
+    panel.grid.major = element_line(color = "grey85"),  # Light grey grid lines
+    panel.grid.minor = element_blank(),  # Removing minor grid lines
+    axis.text.x = element_text(angle = 45, hjust = 1),  # Rotating x-axis labels if necessary
+    axis.ticks.length = unit(0.25, "cm")  # Increasing axis tick length for readability
+  )
+
+```
+
+***Re Visualization 3 Choropleth Maps (for Male and Female Lung Cancer Death Rates)***
+
+```{r, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(patchwork)
+library(gifski)
+library(av)
+
+suppressWarnings({
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(patchwork)
+library(gifski)
+library(av)
+  
+})
+
+suppressPackageStartupMessages({
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(patchwork)
+library(gifski)
+library(av)
+
+})
+
+```
+
+```{r,fig.width=15, fig.height=5}
+# Loading lung cancer data and spatial data
+data <- read.csv("C:/Users/annam/Desktop/SEM_1/STAT_515/R_WORKSHEETS/Mid_project/lung-cancer-data.csv")
+map_data <- st_read("C:/Users/annam/Desktop/myportfolio/MyPortfolio/countries.geo.json")  
+
+# Step 1: Summarizing the data by calculating average death rates for each country
+data_summary <- data %>%
+  group_by(Entity) %>%
+  summarise(
+    Avg_Female_Deaths = mean(Female_Deaths, na.rm = TRUE),
+    Avg_Male_Deaths = mean(Male_Deaths, na.rm = TRUE)
+  )
+
+# Step 2: Merging the summarized data with the GeoJSON map
+map_merged <- merge(map_data, data_summary, by.x = "name", by.y = "Entity", all.x = TRUE)
+
+# Adjusting color palettes for Male and Female deaths with larger map size
+common_scale_female <- scale_fill_gradient(name = "Female Deaths", low = "lightpink", high = "darkred", limits = c(0, 60), na.value = "lightgrey")
+common_scale_male <- scale_fill_gradient(name = "Male Deaths", low = "lightblue", high = "darkblue", limits = c(0, 60), na.value = "lightgrey")
+
+# Female Deaths Map
+female_map <- ggplot(map_merged) +
+  geom_sf(aes(fill = Avg_Female_Deaths), color = "white", size = 0.1) +
+  common_scale_female + 
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.margin = margin(10, 10, 10, 10)
+  ) +
+  labs(title = "Female Lung Cancer Deaths", fill = "Deaths")
+
+# Male Deaths Map
+male_map <- ggplot(map_merged) +
+  geom_sf(aes(fill = Avg_Male_Deaths), color = "white", size = 0.1) +
+  common_scale_male + 
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.margin = margin(10, 10, 10, 10)
+  ) +
+  labs(title = "Male Lung Cancer Deaths", fill = "Deaths")
+
+# Combine maps
+combined_map <- (female_map + male_map) +
+  plot_layout(ncol = 2) + 
+  plot_annotation(
+    title = "Male vs. Female Lung Cancer Death Rates",
+    theme = theme(
+      plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+      plot.margin = margin(30, 20, 20, 20)
+    )
+  )
+# Print combined map
+print(combined_map)
+
+```
+
+***Re visualization 4: stacked bar chart***
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Load the lung cancer data
+lung_cancer_data <- read.csv("C:/Users/annam/Desktop/SEM_1/STAT_515/R_WORKSHEETS/Mid_project/lung-cancer-data.csv")
+
+# Step 1: Summarize the data by calculating total deaths for each country
+data_summary <- lung_cancer_data %>%
+  group_by(Entity) %>%
+  summarise(
+    Female_Deaths = sum(Female_Deaths, na.rm = TRUE),
+    Male_Deaths = sum(Male_Deaths, na.rm = TRUE)
+  ) %>%
+  mutate(Total_Deaths = Female_Deaths + Male_Deaths)
+
+# Step 2: Selecting top 10 highest countries by death rates
+top_10_countries <- data_summary %>%
+  top_n(10, Total_Deaths)
+
+# Step 3: Reshaping data for stacked bar chart (long format)
+data_long <- top_10_countries %>%
+  pivot_longer(cols = c(Female_Deaths, Male_Deaths),
+               names_to = "Sex", values_to = "Deaths")
+
+# Step 4: Adding percentage of male and female deaths to the dataset
+data_long <- data_long %>%
+  group_by(Entity) %>%
+  mutate(Percentage = round((Deaths / sum(Deaths)) * 100, 1))
+
+# Step 5: Create the stacked bar chart for top 10 countries
+top_10_plot <- ggplot(data_long, 
+                      aes(x = reorder(Entity, -Total_Deaths), y = Deaths, fill = Sex)) +
+  geom_bar(stat = "identity", width = 0.6) +
+  geom_text(aes(label = paste0(Percentage, "%")), position = position_stack(vjust = 0.5), size = 3) +  # Add percentage labels
+  # Removed geom_line and geom_point
+  scale_fill_manual(values = c("Female_Deaths" = "#D55E00", "Male_Deaths" = "#0072B2"), 
+                    labels = c("Female Deaths", "Male Deaths")) +  # Enhance legend labels
+  labs(
+    title = "Top 10 Countries by Lung Cancer Death Rates (Male vs Female)",
+    x = "Country",
+    y = "Number of Deaths",
+    fill = "Gender"  # Renamed the legend title
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),  # Rotate x-axis labels and adjust size
+    axis.title = element_text(size = 12),
+    legend.position = "top",  # Move legend closer to the plot
+    legend.text = element_text(size = 12),  # Adjust the size of the legend labels
+    legend.title = element_text(size = 14, face = "bold"),  # Enhance legend title
+    panel.grid.major = element_line(linewidth = 0.5, linetype = 'dashed', color = "gray80")
+  )
+
+# Step 6: Print the top 10 countries plot
+print(top_10_plot)
+
+```
+
+***Re visualization 5: Global Male Lung Cancer Mortality Map***
+
+```{r}
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(sf)
+library(plotly)
+
+# Load lung cancer data and spatial data
+data <- read.csv("C:/Users/annam/Desktop/SEM_1/STAT_515/R_WORKSHEETS/Mid_project/lung-cancer-data.csv")
+map_data <- st_read("C:/Users/annam/Desktop/myportfolio/MyPortfolio/countries.geo.json")
+
+
+# Step 1: Summarizing the data by calculating average male death rates for each country
+data_summary <- data %>%
+  group_by(Entity) %>%
+  summarise(
+    Avg_Male_Deaths = mean(Male_Deaths, na.rm = TRUE)
+  )
+
+# Check the data summary to ensure the average is calculated
+print("Data Summary for Male Lung Cancer Deaths:")
+print(data_summary)
+
+# Step 2: Merging the summarized data with the GeoJSON map
+map_merged <- merge(map_data, data_summary, by.x = "name", by.y = "Entity", all.x = TRUE)
+
+# Checking the merged map data to confirm the male death rates are present
+print("Merged Map Data for Male Lung Cancer Deaths:")
+print(head(map_merged))
+
+# Checking  for NA values in merged data for male death rates
+print("Check for NA values in Avg_Male_Deaths:")
+print(any(is.na(map_merged$Avg_Male_Deaths)))
+
+# Making sure the geometry column is set correctly
+map_merged <- st_as_sf(map_merged)  
+
+# Male Deaths Map with hover text
+male_map <- ggplot(map_merged) +
+  geom_sf(aes(fill = Avg_Male_Deaths, geometry = geometry, 
+              text = paste("Country:", name, "<br>Male Deaths:", Avg_Male_Deaths)), 
+          color = "white", size = 0.1) +
+  scale_fill_gradient(name = "Male Deaths", low = "lightblue", high = "darkblue", limits = c(0, 60), na.value = "lightgrey") + 
+  theme_minimal() +
+  theme(
+    legend.position = "bottom",
+    plot.margin = margin(10, 10, 10, 10)
+  ) +
+  labs(title = "Male Lung Cancer Deaths", fill = "Deaths")
+
+# Rendering the male map to check if it is generated correctly
+print("Rendering Male Lung Cancer Deaths Map:")
+print(male_map)
+
+# Convert the male map to an interactive plotly object
+interactive_map_male <- ggplotly(male_map, tooltip = c("text"))  # Specify tooltip to show country names
+
+# Render the interactive plot
+interactive_map_male  # Just call the variable to render
+
+```

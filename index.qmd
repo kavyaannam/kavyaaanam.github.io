@@ -1,14 +1,23 @@
 ---
-title: "Welcome to my portfolio"
+title: "Unraveling Lung Cancer: A Seven-Decade Analysis of Trends and Influences"
 format:
   html:
     output_dir: docs
     toc: false  # Table of contents is disabled for a clean homepage
-    
 ---
 
-# ![](my_profile_picture.jpg){width="300"}
+🌟 ***Welcome to a journey through the lens of lung cancer mortality.***📅
 
-This is my personal website where I showcase my professional experience, skills, and projects.
+**Explore Decades**: 📈 Our visualizations weave together stories from 1950 to 2021, offering you a multi-dimensional exploration. 🌍
 
+**Gender Divide Insight**: 👫 Dive into the gender divide, revealing how men and women have experienced this battle differently over the decades. 🔍
 
+**Policy Impact**: 🚭 Illuminate the power of policy, showcasing how smoking regulations have shaped the landscape of health outcomes. 🧠📜
+
+**Global Comparison**: 🌎 Discover the disparity and hope, as we contrast lung cancer death rates between males and females across various countries. 🗺️✨
+
+**Data Chapters**: 📖 Each visualization is a chapter in this unfolding narrative, offering insights and sparking conversation. 💬🔎
+
+**Join the Exploration**: 🌟 Through our visualizations, we aim to shed light on the shifts and trends that have shaped lung cancer outcomes over the years, providing valuable insights into this critical public health issue. 📊✨
+
+*Created with passion and insights by BhavyaSri and Kavya.* 🧩📝

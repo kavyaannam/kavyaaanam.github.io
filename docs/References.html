@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>MID PROJECT - Project Insights and Visuals</title>
+<title>MID PROJECT - References</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -96,7 +96,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" aria-current="page"> 
+    <a class="nav-link" href="./projects.html"> 
 <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Source Code</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./References.html"> 
+    <a class="nav-link active" href="./References.html" aria-current="page"> 
 <span class="menu-text">References</span></a>
   </li>  
   <li class="nav-item">
@@ -122,13 +122,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project Insights and Visuals</h1>
+<h1 class="title">References</h1>
 </div>
 
 
@@ -145,78 +147,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>lung-cancer-deaths-per-100000-by-sex-1950-2002</strong></p>
-<ul>
-<li>This project embarks on a deep dive into the historical data of lung cancer mortality spanning over five decades.</li>
-<li>Using the extensive dataset from <a href="https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002">Lung cancer deaths per 100,000 by sex, 1950-2002</a> provided by <a href="https://ourworldindata.org/">Our World in Data</a>, we analyze lung cancer death rates per 100,000 people, segmented by sex.</li>
-</ul>
-<section id="about-the-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="about-the-dataset">About the Dataset:</h3>
-<ul>
-<li><strong>Data Source:</strong> Our World in Data, a widely respected platform known for compiling comprehensive and accurate global statistics.</li>
-<li><strong>Time Range:</strong> This dataset spans from 1950 to 2021, providing a long-term view of lung cancer mortality trends.</li>
-<li><strong>Sex Segmentation:</strong> The data is segmented by sex, allowing for detailed analysis of how lung cancer death rates have evolved differently for men and women.</li>
-<li><strong>Global Reach:</strong> While the data set primarily focuses on historical data, it includes various countries, providing a broad perspective on how different regions have been affected by lung cancer.</li>
-</ul>
-</section>
-<section id="key-insights" class="level3">
-<h3 class="anchored" data-anchor-id="key-insights">Key Insights:</h3>
-<ul>
-<li><strong>Historical Trends:</strong> The data set shows significant trends in lung cancer mortality over five decades, highlighting periods of increase and decline.</li>
-<li><strong>Policy Impact:</strong> The data reveals the impact of public health policies and smoking regulations on lung cancer mortality rates.</li>
-</ul>
-</section>
-<section id="project-goals" class="level3">
-<h3 class="anchored" data-anchor-id="project-goals">Project Goals:</h3>
-<ul>
-<li><strong>Original Visualization</strong></li>
-</ul>
-</section>
-<section id="section" class="level1" width="300">
-<h1 width="300"><img src="original.png" class="img-fluid"></h1>
-<p>The original visualization lacks depth despite offering basic gender comparisons, as it over simplifies historical trends without providing context for key factors like smoking policies. Additionally, while the data aids comparison, the absence of detailed annotations for significant events weakens its ability to convey deeper insights into the shifts in lung cancer death rates over time.</p>
-<p><strong>Re Visualization 1 Boxplot of Lung Cancer Deaths per 100,000 by Sex Across Smoking Regulation Periods (1950-2021)</strong></p>
-<p>This approach highlights the distribution, medians, and variability of lung cancer deaths by sex within each period, providing deeper insights that were not as evident in the original visualization. The boxplot allows for a clearer comparison of death rates across genders, emphasizing how policy changes influenced lung cancer mortality rates over time.</p>
-<p>-<strong>1950-1975</strong>: Pre-smoking regulation</p>
-<p>For the pre-smoking regulation period (1950-1975), the median death rates show stark differences: males had a median of 22.1 deaths per 100,000, while females were significantly lower at 4.5 deaths per 100,000. This suggests that lung cancer was already a significant health issue among men before regulations were implemented.</p>
-<p>-<strong>1975-2000</strong>: Post-smoking regulation</p>
-<p>When we move into the post-smoking regulation period (1975-2000), we see that male deaths jumped to a median of 39.1, and female deaths rose to 7.1. This increase might indicate that while regulations were introduced, it took time for the full effects to manifest, or perhaps the cultural attitudes toward smoking began shifting during this time, impacting both sexes.</p>
-<p>-<strong>2000-2021</strong>: Strict regulations worldwide</p>
-<p>Finally, in the strict regulation period (2000-2021), the median death rates adjusted to 28 deaths per 100,000 for males and 8 deaths for females. It’s interesting to note that while male rates decreased compared to the previous period, they still remained higher than the pre-regulation era, suggesting ongoing challenges. For females, the increase is much more modest, hinting at the potential success of stricter regulations in controlling the disease.</p>
-<p>Overall, this visualization underscores how significant regulatory changes can influence lung cancer mortality rates and highlights the importance of continued efforts in tobacco control.</p>
-</section>
-<section id="section-1" class="level1" width="300">
-<h1 width="300"><img src="visualization_1.png" class="img-fluid"></h1>
-<p>you can find the code for this here <a href="./Code.html">Re Visualization 1</a></p>
-<p><strong><em>Re Visualization 2 Faceted Line Plot: Gender-Specific Lung Cancer Mortality Trends</em></strong></p>
-<p>-This re-visualization dives into lung cancer death rates per 100,000 people by sex from 1950 to 2002. By reshaping the data into a longer format, we can easily compare trends between males and females over the years.</p>
-<p>-The facet grid layout separates male and female death rates, making it clear how they differ. Thicker lines and emphasized points enhance visibility, while a dotted black LOESS trend line shows overall patterns without the noise of yearly fluctuations. The free y-axes allow for an accurate portrayal of mortality rates, revealing that males consistently experience higher death rates, especially in earlier years.</p>
-<p>-This visualization effectively highlights historical trends in lung cancer mortality, showcasing significant differences between sexes and opening the door for discussions about public health policies and the ongoing need for research into lung cancer prevention and treatment.</p>
-</section>
-<section id="section-2" class="level1" width="300">
-<h1 width="300"><img src="visualization_2.png" class="img-fluid"></h1>
-<p>you can find the code for this here <a href="./Code.html">Re Visualization 2</a></p>
-<p><strong><em>Re Visualization 3 Choropleth Maps (for Male and Female Lung Cancer Death Rates)</em></strong></p>
-<p>-In this redesign, I have replaced the original line chart with a global map visualization that compares lung cancer death rates by gender across different countries. -This approach offers several improvements over the original. -First, it adds geographical context, allowing users to see global disparities in lung cancer death rates that were not evident in the original time series chart. S -separate color scales for male and female death rates make gender comparisons clearer, while the inclusion of maps makes it easier to spot regional patterns. -Additionally, the clean layout, with maps for both genders side-by-side and a unified scale, offers a more intuitive comparison of death rates, enhancing overall comprehension. -By visualizing the data geographically, the redesign provides deeper insights into how lung cancer death rates vary not just over time, but across the world.</p>
-</section>
-<section id="section-3" class="level1" width="300">
-<h1 width="300"><img src="visualization_3.png" class="img-fluid"></h1>
-<p>you can find the code for this here <a href="./Code.html">Re Visualization 3</a></p>
-<p><strong><em>Re visualization 4: stacked bar chart</em></strong></p>
-<ul>
-<li>The stacked bar chart provides a clearer, more direct gender comparison, showing the proportion of male and female deaths in each country with percentage labels which the original lacks. -It also enhances cross-country analysis, enabling viewers to compare multiple countries at a glance.</li>
-</ul>
-</section>
-<section id="section-4" class="level1" width="300">
-<h1 width="300"><img src="visualization_4.png" class="img-fluid"></h1>
-<p>you can find the code for this here <a href="./Code.html">Re Visualization 4</a></p>
-<p><strong><em>Re visualization 5: Global Male Lung Cancer Mortality Map</em></strong></p>
-<p>-This visualization maps global male lung cancer death rates using a gradient color scale, with darker blue representing higher death rates and lighter blue indicating lower rates, while grey marks countries with missing data. -The static map features a clean design with clear borders and a bottom legend while the interactive version enhances exploration by allowing users to hover over countries for specific death rates and country names. This interactivity, combined with a well-chosen color gradient, makes it easy to compare data across regions and visually highlight variations in mortality rates.</p>
-<p>you can find the code and output for this here <a href="./Code.html">Re Visualization 5</a></p>
-<p><strong>since this is an interactive graph we have presented the code and the output in the Code.qmd file.</strong></p>
+<ol type="1">
+<li><p><strong>Tableau</strong>. (n.d.). <em>Data visualization tips</em>. Retrieved October 8, 2024, from <a href="https://www.tableau.com/learn/articles/data-visualization-tips" class="uri">https://www.tableau.com/learn/articles/data-visualization-tips</a></p></li>
+<li><p><strong>Chartexpo</strong>. (n.d.). <em>Misleading charts: How to spot and fix misleading visualizations</em>. Retrieved October 8, 2024, from <a href="https://chartexpo.com/blog/misleading-charts" class="uri">https://chartexpo.com/blog/misleading-charts</a></p></li>
+<li><p><strong>Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., &amp; Yutani, H.</strong> (n.d.). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em>. GitHub. Retrieved October 8, 2024, from <a href="https://github.com/tidyverse/ggplot2/blob/HEAD/R/theme-defaults.R" class="uri">https://github.com/tidyverse/ggplot2/blob/HEAD/R/theme-defaults.R</a></p></li>
+<li><p><strong>Kassambara, A.</strong> (n.d.). <em>GGPlot2 themes and background colors</em> [Webpage]. Retrieved October 8, 2024, from <a href="http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements" class="uri">http://www.sthda.com/english/wiki/ggplot2-themes-and-background-colors-the-3-elements</a></p></li>
+<li><p><strong>Johan</strong>. (n.d.). <em>World countries GeoJSON data</em> [Data file]. GitHub. Retrieved October 8, 2024, from <a href="https://github.com/johan/world.geo.json" class="uri">https://github.com/johan/world.geo.json</a></p></li>
+<li><p><strong>National Center for Health Statistics</strong>. (n.d.). <em>Lung cancer incidence and mortality data</em> [Data set]. Retrieved October 8, 2024, from <a href="https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002?time=earliest..latest" class="uri">https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002?time=earliest..latest</a></p></li>
+<li><p><strong>National Center for Health Statistics</strong>. (n.d.). <em>Lung cancer trends</em> [Data visualization]. Retrieved October 8, 2024, from <a href="https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002?time=earliest..latest" class="uri">https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002?time=earliest..latest</a></p></li>
+<li><p><strong>Wickham, H., Chang, W., Henry, L., Pedersen, T. L., Takahashi, K., Wilke, C., Woo, K., &amp; Yutani, H.</strong> (2024). <em>ggplot2: Create elegant data visualisations using the grammar of graphics</em> (Version 3.4.2) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/ggplot2/index.html" class="uri">https://cran.r-project.org/web/packages/ggplot2/index.html</a></p></li>
+<li><p><strong>Wickham, H., François, R., Henry, L., &amp; Müller, K.</strong> (2024). <em>dplyr: A grammar of data manipulation</em> (Version 1.1.2) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/dplyr/index.html" class="uri">https://cran.r-project.org/web/packages/dplyr/index.html</a></p></li>
+<li><p><strong>Wickham, H., Hester, J., &amp; Bryan, J.</strong> (2024). <em>readr: Read rectangular text data</em> (Version 2.1.4) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/readr/index.html" class="uri">https://cran.r-project.org/web/packages/readr/index.html</a></p></li>
+<li><p><strong>Müller, K., &amp; Wickham, H.</strong> (2024). <em>tibble: Simple data frames</em> (Version 3.2.1) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/tibble/index.html" class="uri">https://cran.r-project.org/web/packages/tibble/index.html</a></p></li>
+<li><p><strong>Sievert, C.</strong> (2024). <em>plotly: Create interactive web graphics via ‘plotly.js’</em> (Version 4.10.2) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/plotly/index.html" class="uri">https://cran.r-project.org/web/packages/plotly/index.html</a></p></li>
+<li><p><strong>Chang, W., Cheng, J., Allaire, J. J., Sievert, C., Schloerke, B., Xie, Y., Allen, J., McPherson, J., Dipert, A., &amp; Borges, B.</strong> (2024). <em>Shiny: Web application framework for R</em> (Version 1.7.5) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/shiny/index.html" class="uri">https://cran.r-project.org/web/packages/shiny/index.html</a></p></li>
+<li><p><strong>Neuwirth, E.</strong> (2024). <em>RColorBrewer: ColorBrewer palettes</em> (Version 1.1-3) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/RColorBrewer/index.html" class="uri">https://cran.r-project.org/web/packages/RColorBrewer/index.html</a></p></li>
+<li><p><strong>Pedersen, T. L.</strong> (2024). <em>gganimate: A grammar of animated graphics</em> (Version 1.8.0) [R package]. Retrieved from <a href="https://cran.r-project.org/web/packages/gganimate/index.html" class="uri">https://cran.r-project.org/web/packages/gganimate/index.html</a></p></li>
+</ol>
+<p>16.<strong>Zoom</strong>. (2020, March 26). <em>How to record a Zoom meeting</em> [Video]. YouTube. Retrieved October 8, 2024, from <a href="https://www.youtube.com/watch?v=H9qhoAIzW3E" class="uri">https://www.youtube.com/watch?v=H9qhoAIzW3E</a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

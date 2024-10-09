@@ -147,9 +147,11 @@ ul.task-list li input[type="checkbox"] {
 
 <p><strong>lung-cancer-deaths-per-100000-by-sex-1950-2002</strong></p>
 <ul>
-<li>This project embarks on a deep dive into the historical data of lung cancer mortality spanning over five decades.</li>
-<li>Using the extensive dataset from <a href="https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002">Lung cancer deaths per 100,000 by sex, 1950-2002</a> provided by <a href="https://ourworldindata.org/">Our World in Data</a>, we analyze lung cancer death rates per 100,000 people, segmented by sex.</li>
+<li><p>This project embarks on a deep dive into the historical data of lung cancer mortality spanning over five decades.</p></li>
+<li><p>Using the extensive dataset from <a href="https://ourworldindata.org/grapher/lung-cancer-deaths-per-100000-by-sex-1950-2002">Lung cancer deaths per 100,000 by sex, 1950-2002</a> provided by <a href="https://ourworldindata.org/">Our World in Data</a>, we analyze lung cancer death rates per 100,000 people, segmented by sex.</p></li>
+<li><p>For a fun and quick walk through of our lung cancer data project (with visuals, of course!), check out the video below—because sometimes it’s better to see than to read.</p></li>
 </ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/j1fQ2xoGWNs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <section id="about-the-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="about-the-dataset">About the Dataset:</h3>
 <ul>
@@ -174,35 +176,53 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="section" class="level1" width="300">
 <h1 width="300"><img src="original.png" class="img-fluid"></h1>
-<p>The original visualization lacks depth despite offering basic gender comparisons, as it over simplifies historical trends without providing context for key factors like smoking policies. Additionally, while the data aids comparison, the absence of detailed annotations for significant events weakens its ability to convey deeper insights into the shifts in lung cancer death rates over time.</p>
-<p><strong>Re Visualization 1 Boxplot of Lung Cancer Deaths per 100,000 by Sex Across Smoking Regulation Periods (1950-2021)</strong></p>
-<p>This approach highlights the distribution, medians, and variability of lung cancer deaths by sex within each period, providing deeper insights that were not as evident in the original visualization. The boxplot allows for a clearer comparison of death rates across genders, emphasizing how policy changes influenced lung cancer mortality rates over time.</p>
-<p>-<strong>1950-1975</strong>: Pre-smoking regulation</p>
-<p>For the pre-smoking regulation period (1950-1975), the median death rates show stark differences: males had a median of 22.1 deaths per 100,000, while females were significantly lower at 4.5 deaths per 100,000. This suggests that lung cancer was already a significant health issue among men before regulations were implemented.</p>
-<p>-<strong>1975-2000</strong>: Post-smoking regulation</p>
-<p>When we move into the post-smoking regulation period (1975-2000), we see that male deaths jumped to a median of 39.1, and female deaths rose to 7.1. This increase might indicate that while regulations were introduced, it took time for the full effects to manifest, or perhaps the cultural attitudes toward smoking began shifting during this time, impacting both sexes.</p>
-<p>-<strong>2000-2021</strong>: Strict regulations worldwide</p>
-<p>Finally, in the strict regulation period (2000-2021), the median death rates adjusted to 28 deaths per 100,000 for males and 8 deaths for females. It’s interesting to note that while male rates decreased compared to the previous period, they still remained higher than the pre-regulation era, suggesting ongoing challenges. For females, the increase is much more modest, hinting at the potential success of stricter regulations in controlling the disease.</p>
-<p>Overall, this visualization underscores how significant regulatory changes can influence lung cancer mortality rates and highlights the importance of continued efforts in tobacco control.</p>
+<ul>
+<li>The original visualization lacks depth despite offering basic gender comparisons, as it over simplifies historical trends without providing context for key factors like smoking policies. Additionally, while the data aids comparison, the absence of detailed annotations for significant events weakens its ability to convey deeper insights into the shifts in lung cancer death rates over time.</li>
+</ul>
+<p><strong>Re Visualization 1 : Boxplot of Lung Cancer Deaths per 100,000 by Sex Across Smoking Regulation Periods (1950-2021)</strong></p>
+<ul>
+<li>This approach highlights the distribution, medians, and variability of lung cancer deaths by sex within each period, providing deeper insights that were not as evident in the original visualization. The boxplot allows for a clearer comparison of death rates across genders, emphasizing how policy changes influenced lung cancer mortality rates over time.</li>
+</ul>
+<p><strong>1950-1975</strong>: Pre-smoking regulation</p>
+<ul>
+<li>For the pre-smoking regulation period (1950-1975), the median death rates show stark differences males had a median of 22.1 deaths per 100,000, while females were significantly lower at 4.5 deaths per 100,000. This suggests that lung cancer was already a significant health issue among men before regulations were implemented.</li>
+</ul>
+<p><strong>1975-2000</strong>: Post-smoking regulation</p>
+<ul>
+<li>When we move into the post-smoking regulation period (1975-2000), we see that male deaths jumped to a median of 39.1, and female deaths rose to 7.1. This increase might indicate that while regulations were introduced, it took time for the full effects to manifest, or perhaps the cultural attitudes toward smoking began shifting during this time, impacting both sexes.</li>
+</ul>
+<p><strong>2000-2021</strong>: Strict regulations worldwide</p>
+<ul>
+<li><p>Finally, in the strict regulation period (2000-2021), the median death rates adjusted to 28 deaths per 100,000 for males and 8 deaths for females. It’s interesting to note that while male rates decreased compared to the previous period, they still remained higher than the pre-regulation era, suggesting ongoing challenges. For females, the increase is much more modest, hinting at the potential success of stricter regulations in controlling the disease.</p></li>
+<li><p>Overall, this visualization underscores how significant regulatory changes can influence lung cancer mortality rates and highlights the importance of continued efforts in tobacco control.</p></li>
+</ul>
 </section>
 <section id="section-1" class="level1" width="300">
 <h1 width="300"><img src="visualization_1.png" class="img-fluid"></h1>
 <p>you can find the code for this here <a href="./Code.html">Re Visualization 1</a></p>
-<p><strong><em>Re Visualization 2 Faceted Line Plot: Gender-Specific Lung Cancer Mortality Trends</em></strong></p>
-<p>-This re-visualization dives into lung cancer death rates per 100,000 people by sex from 1950 to 2002. By reshaping the data into a longer format, we can easily compare trends between males and females over the years.</p>
-<p>-The facet grid layout separates male and female death rates, making it clear how they differ. Thicker lines and emphasized points enhance visibility, while a dotted black LOESS trend line shows overall patterns without the noise of yearly fluctuations. The free y-axes allow for an accurate portrayal of mortality rates, revealing that males consistently experience higher death rates, especially in earlier years.</p>
-<p>-This visualization effectively highlights historical trends in lung cancer mortality, showcasing significant differences between sexes and opening the door for discussions about public health policies and the ongoing need for research into lung cancer prevention and treatment.</p>
+<p><strong>Re Visualization 2 : Faceted Line Plot Gender-Specific Lung Cancer Mortality Trends</strong></p>
+<ul>
+<li><p>This re-visualization dives into lung cancer death rates per 100,000 people by sex from 1950 to 2002. By reshaping the data into a longer format, we can easily compare trends between males and females over the years.</p></li>
+<li><p>The facet grid layout separates male and female death rates, making it clear how they differ. Thicker lines and emphasized points enhance visibility, while a dotted black LOESS trend line shows overall patterns without the noise of yearly fluctuations. The free y-axes allow for an accurate portrayal of mortality rates, revealing that males consistently experience higher death rates, especially in earlier years.</p></li>
+<li><p>This visualization effectively highlights historical trends in lung cancer mortality, showcasing significant differences between sexes and opening the door for discussions about public health policies and the ongoing need for research into lung cancer prevention and treatment.</p></li>
+</ul>
 </section>
 <section id="section-2" class="level1" width="300">
 <h1 width="300"><img src="visualization_2.png" class="img-fluid"></h1>
 <p>you can find the code for this here <a href="./Code.html">Re Visualization 2</a></p>
-<p><strong><em>Re Visualization 3 Choropleth Maps (for Male and Female Lung Cancer Death Rates)</em></strong></p>
-<p>-In this redesign, I have replaced the original line chart with a global map visualization that compares lung cancer death rates by gender across different countries. -This approach offers several improvements over the original. -First, it adds geographical context, allowing users to see global disparities in lung cancer death rates that were not evident in the original time series chart. S -separate color scales for male and female death rates make gender comparisons clearer, while the inclusion of maps makes it easier to spot regional patterns. -Additionally, the clean layout, with maps for both genders side-by-side and a unified scale, offers a more intuitive comparison of death rates, enhancing overall comprehension. -By visualizing the data geographically, the redesign provides deeper insights into how lung cancer death rates vary not just over time, but across the world.</p>
+<p><strong>Re Visualization 3 : Choropleth Maps (for Male and Female Lung Cancer Death Rates)</strong></p>
+<ul>
+<li><p>In this redesign, I have replaced the original line chart with a global map visualization that compares lung cancer death rates by gender across different countries.</p></li>
+<li><p>This approach offers several improvements over the original.Firstly, it adds geographical context, allowing users to see global disparities in lung cancer death rates that were not evident in the original time series chart.</p></li>
+<li><p>separate color scales for male and female death rates make gender comparisons clearer, while the inclusion of maps makes it easier to spot regional patterns.</p></li>
+<li><p>Additionally, the clean layout, with maps for both genders side-by-side and a unified scale, offers a more intuitive comparison of death rates, enhancing overall comprehension.</p></li>
+<li><p>By visualizing the data geographically, the redesign provides deeper insights into how lung cancer death rates vary not just over time, but across the world.</p></li>
+</ul>
 </section>
 <section id="section-3" class="level1" width="300">
 <h1 width="300"><img src="visualization_3.png" class="img-fluid"></h1>
 <p>you can find the code for this here <a href="./Code.html">Re Visualization 3</a></p>
-<p><strong><em>Re visualization 4: stacked bar chart</em></strong></p>
+<p><strong>Re visualization 4: stacked bar chart</strong></p>
 <ul>
 <li>The stacked bar chart provides a clearer, more direct gender comparison, showing the proportion of male and female deaths in each country with percentage labels which the original lacks. -It also enhances cross-country analysis, enabling viewers to compare multiple countries at a glance.</li>
 </ul>
@@ -210,8 +230,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="section-4" class="level1" width="300">
 <h1 width="300"><img src="visualization_4.png" class="img-fluid"></h1>
 <p>you can find the code for this here <a href="./Code.html">Re Visualization 4</a></p>
-<p><strong><em>Re visualization 5: Global Male Lung Cancer Mortality Map</em></strong></p>
-<p>-This visualization maps global male lung cancer death rates using a gradient color scale, with darker blue representing higher death rates and lighter blue indicating lower rates, while grey marks countries with missing data. -The static map features a clean design with clear borders and a bottom legend while the interactive version enhances exploration by allowing users to hover over countries for specific death rates and country names. This interactivity, combined with a well-chosen color gradient, makes it easy to compare data across regions and visually highlight variations in mortality rates.</p>
+<p><strong>Re visualization 5: Global Male Lung Cancer Mortality Map</strong></p>
+<ul>
+<li><p>This visualization maps global male lung cancer death rates using a gradient color scale, with darker blue representing higher death rates and lighter blue indicating lower rates, while grey marks countries with missing data.</p></li>
+<li><p>The static map features a clean design with clear borders and a bottom legend while the interactive version enhances exploration by allowing users to hover over countries for specific death rates and country names. This interactivity, combined with a well-chosen color gradient, makes it easy to compare data across regions and visually highlight variations in mortality rates.</p></li>
+</ul>
 <p>you can find the code and output for this here <a href="./Code.html">Re Visualization 5</a></p>
 <p><strong>since this is an interactive graph we have presented the code and the output in the Code.qmd file.</strong></p>
 

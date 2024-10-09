@@ -66,20 +66,20 @@ median_values <- data_long %>%
   group_by(Regulation_Period, Sex) %>%
   summarise(Median_Deaths = median(Deaths_per_100k))
 
-# Step 5: Plot the combined data with box plots for all three periods (with improved visibility)
+# Step 5: Ploting the combined data with box plots for all three periods (with improved visibility)
 ggplot(data_long, aes(x = Regulation_Period, y = Deaths_per_100k, fill = Sex)) +
   geom_boxplot(outlier.shape = NA, alpha = 0.7) +  # Boxplot without outliers
   stat_summary(fun = median, geom = "point", shape = 20, size = 3, color = "black", position = position_dodge(0.75)) +  # Add median points in black
-  geom_text(data = median_values, aes(label = round(Median_Deaths, 1), y = Median_Deaths + 5),  # Annotate medians, adjust position
-            position = position_dodge(0.75), size = 4, color = "black", vjust = -0.5) +  # Use black color for better contrast
-  scale_fill_brewer(palette = "Set1") +  # Use a color palette for professional aesthetics
+  geom_text(data = median_values, aes(label = round(Median_Deaths, 1), y = Median_Deaths + 5), 
+            position = position_dodge(0.75), size = 4, color = "black", vjust = -0.5) +  
+  scale_fill_brewer(palette = "Set1") +  
   labs(title = "Lung Cancer Deaths per 100,000: Pre, Post, and Strict Smoking Regulations",
        subtitle = "Comparison between Male and Female Death Rates Across Three Regulatory Periods",
        x = "Regulation Period", 
        y = "Deaths per 100,000", 
        fill = "Sex") +
-  ylim(0, 50) +  # Adjust y-axis limits to provide more room for annotations
-  theme_minimal() +  # Clean, minimal theme
+  ylim(0, 50) +  
+  theme_minimal() + 
   theme(plot.title = element_text(size = 16, face = "bold"),
         plot.subtitle = element_text(size = 12),
         axis.text.x = element_text(size = 12),
@@ -88,12 +88,11 @@ ggplot(data_long, aes(x = Regulation_Period, y = Deaths_per_100k, fill = Sex)) +
         legend.title = element_text(size = 12),
         legend.text = element_text(size = 12),
         panel.grid.major = element_line(size = 0.5, linetype = 'solid', color = 'grey80'),
-        panel.grid.minor = element_blank())  # Remove minor grid lines for a cleaner look
+        panel.grid.minor = element_blank()) 
 
 ```
 
 ***Re Visualization 2 Faceted Line Plot: Gender-Specific Lung Cancer Mortality Trends***
-
 
 ```{r}
 # Load necessary libraries
@@ -233,16 +232,16 @@ print(combined_map)
 
 ***Re visualization 4: stacked bar chart***
 
-```{r}
+```{r, fig.width=15, fig.height=7}
 # Load necessary libraries
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-# Load the lung cancer data
+# Loading the lung cancer data
 lung_cancer_data <- read.csv("C:/Users/annam/Desktop/SEM_1/STAT_515/R_WORKSHEETS/Mid_project/lung-cancer-data.csv")
 
-# Step 1: Summarize the data by calculating total deaths for each country
+# Step 1: Summarizing the data by calculating total deaths for each country
 data_summary <- lung_cancer_data %>%
   group_by(Entity) %>%
   summarise(
@@ -265,7 +264,7 @@ data_long <- data_long %>%
   group_by(Entity) %>%
   mutate(Percentage = round((Deaths / sum(Deaths)) * 100, 1))
 
-# Step 5: Create the stacked bar chart for top 10 countries
+# Step 5: Creating the stacked bar chart for top 10 countries
 top_10_plot <- ggplot(data_long, 
                       aes(x = reorder(Entity, -Total_Deaths), y = Deaths, fill = Sex)) +
   geom_bar(stat = "identity", width = 0.6) +
@@ -277,20 +276,20 @@ top_10_plot <- ggplot(data_long,
     title = "Top 10 Countries by Lung Cancer Death Rates (Male vs Female)",
     x = "Country",
     y = "Number of Deaths",
-    fill = "Gender"  # Renamed the legend title
+    fill = "Gender" 
   ) +
   theme_minimal() +
   theme(
     plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),  # Rotate x-axis labels and adjust size
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10), 
     axis.title = element_text(size = 12),
-    legend.position = "top",  # Move legend closer to the plot
-    legend.text = element_text(size = 12),  # Adjust the size of the legend labels
-    legend.title = element_text(size = 14, face = "bold"),  # Enhance legend title
+    legend.position = "top",  
+    legend.text = element_text(size = 12),  
+    legend.title = element_text(size = 14, face = "bold"),  
     panel.grid.major = element_line(linewidth = 0.5, linetype = 'dashed', color = "gray80")
   )
 
-# Step 6: Print the top 10 countries plot
+# Step 6: Printing the top 10 countries plot
 print(top_10_plot)
 
 ```
@@ -316,7 +315,7 @@ data_summary <- data %>%
     Avg_Male_Deaths = mean(Male_Deaths, na.rm = TRUE)
   )
 
-# Check the data summary to ensure the average is calculated
+# Checking the data summary to ensure the average is calculated
 print("Data Summary for Male Lung Cancer Deaths:")
 print(data_summary)
 
@@ -347,14 +346,10 @@ male_map <- ggplot(map_merged) +
   ) +
   labs(title = "Male Lung Cancer Deaths", fill = "Deaths")
 
-# Rendering the male map to check if it is generated correctly
-print("Rendering Male Lung Cancer Deaths Map:")
-print(male_map)
 
-# Convert the male map to an interactive plotly object
-interactive_map_male <- ggplotly(male_map, tooltip = c("text"))  # Specify tooltip to show country names
+interactive_map_male <- ggplotly(male_map, tooltip = c("text"))   
 
-# Render the interactive plot
-interactive_map_male  # Just call the variable to render
+
+interactive_map_male 
 
 ```

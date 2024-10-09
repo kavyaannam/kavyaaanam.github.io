@@ -38,7 +38,7 @@ I am a **Systems Engineer** and **Senior Software Engineer** with 5 years of exp
 -   Led data engineering efforts for Aviva Health UK, designing scalable data pipelines and implementing ETL processes.
 -   Managed and optimized databases to ensure data quality and performance.
 
-# Hi, I'm Bhavya Sri 👋
+# Hi, I'm Bhavyasri 👋
 
 ## About me
 

@@ -33,4 +33,13 @@ editor: visual
 
 15. **Pedersen, T. L.** (2024). *gganimate: A grammar of animated graphics* (Version 1.8.0) \[R package\]. Retrieved from <https://cran.r-project.org/web/packages/gganimate/index.html>
 
-16.**Zoom**. (2020, March 26). *How to record a Zoom meeting* \[Video\]. YouTube. Retrieved October 8, 2024, from <https://www.youtube.com/watch?v=H9qhoAIzW3E>
+16. **Zoom**. (2020, March 26). *How to record a Zoom meeting* \[Video\]. YouTube. Retrieved October 8, 2024, from <https://www.youtube.com/watch?v=H9qhoAIzW3E>
+
+17. **Gohel**, D. (2024). av: *Working with Audio and Video in R* (Version 1.0.3) [R package]. Retrieved from <https://cran.r-project.org/web/packages/av/index.html>*
+
+18. **Pedersen, T. L. (2024). patchwork:** The composer of plots (Version
+1.1.2) [R package]. Retrieved from <https://cran.r-project.org/web/packages/patchwork/index.html>
+
+19. **Ooms, J. (2024). gifski:** Highest quality GIF encoder (Version 1.6.6) [R package]. Retrieved from
+<https://cran.r-project.org/web/packages/gifski/index.html>
+
